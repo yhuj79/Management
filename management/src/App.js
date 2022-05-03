@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Customer from "./components/Customer";
+
+const customer = {
+  id: 1,
+  image: "https://placeimg.com/64/64/any",
+  name: "홍길동",
+  birthday: "980709",
+  gender: "남자",
+  job: "대학생",
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Management Project
-        </a>
-      </header>
+    <div>
+      <Customer
+        id={customer.id}
+        image={customer.image}
+        name={customer.name}
+        birthday={customer.birthday}
+        gender={customer.gender}
+        job={customer.job}
+      />
     </div>
   );
 }
