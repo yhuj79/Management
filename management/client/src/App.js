@@ -1,34 +1,36 @@
 import styled from "styled-components";
 import Customer from "./components/Customer";
-
-const customers = [
-  {
-    id: 1,
-    image: "https://placeimg.com/64/64/1",
-    name: "홍길동",
-    birthday: "980709",
-    gender: "남자",
-    job: "대학생",
-  },
-  {
-    id: 2,
-    image: "https://placeimg.com/64/64/2",
-    name: "호날두",
-    birthday: "850205",
-    gender: "남자",
-    job: "축구선수",
-  },
-  {
-    id: 3,
-    image: "https://placeimg.com/64/64/3",
-    name: "메시",
-    birthday: "870624",
-    gender: "남자",
-    job: "축구선수",
-  },
-];
+import { useState, useEffect } from "react";
 
 function App() {
+
+  const [customers, setCustomers] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/customers')
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      setCustomers(data);
+    })
+  }, []);
+
+  // state = {
+  //   customers: ""
+  // }
+
+  // componentDidMount() {
+  //   this.callApi()
+  //     .then(res => this.setState({ customers: res }))
+  //     .catch(err => console.log(err));
+  // }
+
+  // callApi = async () => {
+  //   const response = await fetch('/api/customers');
+  //   const body = await response.json();
+  // }
+
   return (
     <div>
       <HeadDiv>
@@ -40,7 +42,7 @@ function App() {
         <div className="head-job">직업</div>
       </HeadDiv>
       <div>
-        {customers.map((m) => {
+        {customers!==0 ? customers.map((m) => {
           return (
             <Customer
               key={m.id}
@@ -52,7 +54,7 @@ function App() {
               job={m.job}
             />
           );
-        })}
+        }) : ""}
       </div>
     </div>
   );
