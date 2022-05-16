@@ -1,35 +1,33 @@
-import styled from "styled-components";
-import Customer from "./components/Customer";
 import { useState, useEffect } from "react";
+import Customer from "./components/Customer";
+import styled from "styled-components";
+import ClipLoader from "react-spinners/ClipLoader";
+import "./App.css";
 
 function App() {
-
   const [customers, setCustomers] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch('/api/customers')
-    .then(res => {
-      return res.json();
-    })
-    .then(data => {
-      setCustomers(data);
-    })
+    fetch("/api/customers")
+      .then((res) => {
+        setLoading(true);
+        return res.json();
+      })
+      .then((data) => {
+        setCustomers(data);
+        setLoading(false);
+      });
   }, []);
 
-  // state = {
-  //   customers: ""
-  // }
-
-  // componentDidMount() {
-  //   this.callApi()
-  //     .then(res => this.setState({ customers: res }))
-  //     .catch(err => console.log(err));
-  // }
-
-  // callApi = async () => {
-  //   const response = await fetch('/api/customers');
-  //   const body = await response.json();
-  // }
+  if (loading) {
+    return (
+      <div className="loader">
+        <ClipLoader size={100} />
+        <p>잠시만 기다려 주세요!</p>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -42,19 +40,21 @@ function App() {
         <div className="head-job">직업</div>
       </HeadDiv>
       <div>
-        {customers!==0 ? customers.map((m) => {
-          return (
-            <Customer
-              key={m.id}
-              id={m.id}
-              image={m.image}
-              name={m.name}
-              birthday={m.birthday}
-              gender={m.gender}
-              job={m.job}
-            />
-          );
-        }) : ""}
+        {customers !== 0
+          ? customers.map((m) => {
+              return (
+                <Customer
+                  key={m.id}
+                  id={m.id}
+                  image={m.image}
+                  name={m.name}
+                  birthday={m.birthday}
+                  gender={m.gender}
+                  job={m.job}
+                />
+              );
+            })
+          : ""}
       </div>
     </div>
   );
@@ -64,8 +64,12 @@ const HeadDiv = styled.div`
   justify-content: center;
   margin: 20px;
 
-  .head-id, .head-image, .head-name,
-  .head-birthday, .head-gender, .head-job {
+  .head-id,
+  .head-image,
+  .head-name,
+  .head-birthday,
+  .head-gender,
+  .head-job {
     width: 200px;
   }
 `;

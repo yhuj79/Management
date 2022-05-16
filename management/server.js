@@ -32,6 +32,22 @@ app.get("/api/customers", (req, res) => {
       gender: "남자",
       job: "축구선수",
     },
+    {
+      id: 4,
+      image: "https://placeimg.com/64/64/4",
+      name: "김개발",
+      birthday: "950921",
+      gender: "남자",
+      job: "프로그래머",
+    },
+    {
+      id: 5,
+      image: "https://placeimg.com/64/64/5",
+      name: "손흥민",
+      birthday: "920708",
+      gender: "남자",
+      job: "축구선수",
+    },
   ]);
 });
 
