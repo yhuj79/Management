@@ -23,7 +23,7 @@ function App() {
   if (loading) {
     return (
       <div className="loader">
-        <ClipLoader size={100} />
+        <ClipLoader size={100} color="white" />
         <p>잠시만 기다려 주세요!</p>
       </div>
     );
@@ -33,7 +33,7 @@ function App() {
     <div>
       <HeadDiv>
         <div className="head-id">번호</div>
-        <div className="head-image">프로필 이미지</div>
+        <div className="head-image">프로필</div>
         <div className="head-name">이름</div>
         <div className="head-birthday">생년월일</div>
         <div className="head-gender">성별</div>
@@ -62,7 +62,9 @@ function App() {
 const HeadDiv = styled.div`
   display: flex;
   justify-content: center;
-  margin: 20px;
+  padding: 20px;
+  background-color: #353535;
+  border-bottom: 3px solid white;
 
   .head-id,
   .head-image,

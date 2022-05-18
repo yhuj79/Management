@@ -18,6 +18,7 @@ function Customer({ id, image, name, birthday, gender, job }) {
 const CustomerDiv = styled.div`
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid white;
 
   .customer-id, .customer-image, .customer-name,
   .customer-birthday, .customer-gender, .customer-job {
