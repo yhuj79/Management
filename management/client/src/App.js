@@ -3,6 +3,7 @@ import Customer from "./components/Customer";
 import styled from "styled-components";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./App.css";
+import CustomerAdd from "./components/CustomerAdd";
 
 function App() {
   const [customers, setCustomers] = useState([]);
@@ -56,6 +57,7 @@ function App() {
             })
           : ""}
       </div>
+      <CustomerAdd />
     </div>
   );
 }
