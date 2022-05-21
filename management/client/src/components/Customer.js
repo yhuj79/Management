@@ -6,7 +6,7 @@ function Customer({ id, image, name, birthday, gender, job }) {
     <CustomerDiv>
       <div className="customer-id">{id}</div>
       <div className="customer-image">
-        <img src={image} alt="profile" />
+        <img src={image} alt="profile" loading="lazy" />
       </div>
       <div className="customer-name">{name}</div>
       <div className="customer-birthday">{birthday}</div>
@@ -18,7 +18,7 @@ function Customer({ id, image, name, birthday, gender, job }) {
 const CustomerDiv = styled.div`
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #484848;
 
   .customer-id, .customer-image, .customer-name,
   .customer-birthday, .customer-gender, .customer-job {

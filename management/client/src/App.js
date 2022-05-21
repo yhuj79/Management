@@ -4,6 +4,7 @@ import styled from "styled-components";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./App.css";
 import CustomerAdd from "./components/CustomerAdd";
+import Title from "./components/Title";
 
 function App() {
   const [customers, setCustomers] = useState([]);
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <div>
+      <Title />
       <HeadDiv>
         <div className="head-id">번호</div>
         <div className="head-image">프로필</div>
@@ -66,7 +68,9 @@ const HeadDiv = styled.div`
   justify-content: center;
   padding: 20px;
   background-color: #353535;
-  border-bottom: 3px solid white;
+  border-top: 1px solid #6B6B6B;
+  border-bottom: 1px solid #6B6B6B;
+  font-size: 18px;
 
   .head-id,
   .head-image,
