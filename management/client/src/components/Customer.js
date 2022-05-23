@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import CustomerDel from "./CustomerDel";
 
 function Customer({ id, image, name, birthday, gender, job }) {
   return (
@@ -12,6 +13,9 @@ function Customer({ id, image, name, birthday, gender, job }) {
       <div className="customer-birthday">{birthday}</div>
       <div className="customer-gender">{gender}</div>
       <div className="customer-job">{job}</div>
+      <div>
+        <CustomerDel id={id} />
+      </div>
     </CustomerDiv>
   );
 }
