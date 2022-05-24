@@ -35,7 +35,7 @@ function App() {
     <div>
       <Title />
       <HeadDiv>
-        <div className="head-id">번호</div>
+        <div className="head-id">고유ID</div>
         <div className="head-image">프로필</div>
         <div className="head-name">이름</div>
         <div className="head-birthday">생년월일</div>
@@ -67,6 +67,7 @@ const HeadDiv = styled.div`
   display: flex;
   justify-content: center;
   padding: 20px;
+  margin-left: -50px;
   background-color: #353535;
   border-top: 1px solid #6B6B6B;
   border-bottom: 1px solid #6B6B6B;
