@@ -76,6 +76,9 @@ const HeadDiv = styled.div`
   font-size: 18px;
   line-height: 2.5;
 
+  position: sticky;
+  top: 0;
+
   .head-id,
   .head-image,
   .head-name,

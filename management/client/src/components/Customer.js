@@ -14,7 +14,7 @@ function Customer({ id, image, name, birthday, gender, job }) {
       <div className="customer-gender">{gender}</div>
       <div className="customer-job">{job}</div>
       <div>
-        <CustomerDel id={id} />
+        <CustomerDel id={id} name={name} image={image} />
       </div>
     </CustomerDiv>
   );
