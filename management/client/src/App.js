@@ -41,6 +41,7 @@ function App() {
         <div className="head-birthday">생년월일</div>
         <div className="head-gender">성별</div>
         <div className="head-job">직업</div>
+        <CustomerAdd />
       </HeadDiv>
       <div>
         {customers !== 0
@@ -59,19 +60,19 @@ function App() {
             })
           : ""}
       </div>
-      <CustomerAdd />
     </div>
   );
 }
 const HeadDiv = styled.div`
   display: flex;
   justify-content: center;
-  padding: 20px;
-  margin-left: -50px;
+  padding: 10px;
+  margin-right: -20px;
   background-color: #353535;
   border-top: 1px solid #6B6B6B;
   border-bottom: 1px solid #6B6B6B;
   font-size: 18px;
+  line-height: 3;
 
   .head-id,
   .head-image,
