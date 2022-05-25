@@ -6,9 +6,7 @@ import styled from "styled-components";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
-import { grey } from "@mui/material/colors";
 
 function CustomerAdd() {
   const [file, setFile] = useState(null);
@@ -78,7 +76,9 @@ function CustomerAdd() {
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleOpen}>고객추가</Button>
+      <Button variant="contained" color="primary" onClick={handleOpen}>
+        고객추가
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -96,55 +96,27 @@ function CustomerAdd() {
               <FileLabel>{fileName}</FileLabel>
             )}
           </label>
-          <input
-            type="file"
-            name="file"
-            file={file}
-            value={fileName}
-            onChange={handleFileChange}
-            id="input-file"
-            style={{ display: "none" }}
-          />
+          <input type="file" name="file" file={file} value={fileName} onChange={handleFileChange} id="input-file" style={{ display: "none" }} />
           <br />
-          <CssTextField
-            label="이름"
-            type="text"
-            name="userName"
-            value={userName}
-            onChange={handleValueChange}
-          />
+          <CssTextField label="이름" type="text" name="userName" value={userName} onChange={handleValueChange} />
           <br />
           <br />
-          <CssTextField
-            label="생년월일"
-            type="text"
-            name="birthday"
-            value={birthday}
-            onChange={handleValueChange}
-          />
+          <CssTextField label="생년월일" type="text" name="birthday" value={birthday} onChange={handleValueChange} />
           <br />
           <br />
-          <CssTextField
-            label="성별"
-            type="text"
-            name="gender"
-            value={gender}
-            onChange={handleValueChange}
-          />
+          <CssTextField label="성별" type="text" name="gender" value={gender} onChange={handleValueChange} />
           <br />
           <br />
-          <CssTextField
-            label="직업"
-            type="text"
-            name="job"
-            value={job}
-            onChange={handleValueChange}
-          />
+          <CssTextField label="직업" type="text" name="job" value={job} onChange={handleValueChange} />
           <br />
           <br />
-          <div style={{display: 'flex', opacity: '0.8'}}>
-            <Button variant="contained" color="primary" onClick={handleForSubmit} style={{marginRight: '65px'}}>제출</Button>
-            <Button variant="contained" color="error" onClick={handleClose}>닫기</Button>
+          <div style={{ display: "flex" }}>
+            <Button variant="contained" color="primary" onClick={handleForSubmit} style={{ marginRight: "65px" }}>
+              제출
+            </Button>
+            <Button variant="contained" color="error" onClick={handleClose}>
+              닫기
+            </Button>
           </div>
         </Box>
       </Modal>
@@ -182,6 +154,8 @@ const CssTextField = styled(TextField)({
     borderBottomColor: "#DCDCDC",
   },
   "& .MuiOutlinedInput-root": {
+    color: "#47C83E",
+    fontWeight: "bold",
     "& fieldset": {
       borderColor: "#DCDCDC",
     },

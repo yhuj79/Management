@@ -41,7 +41,9 @@ function App() {
         <div className="head-birthday">생년월일</div>
         <div className="head-gender">성별</div>
         <div className="head-job">직업</div>
-        <CustomerAdd />
+        <CustomerAddDiv>
+          <CustomerAdd />
+        </CustomerAddDiv>
       </HeadDiv>
       <div>
         {customers !== 0
@@ -72,7 +74,7 @@ const HeadDiv = styled.div`
   border-top: 1px solid #6B6B6B;
   border-bottom: 1px solid #6B6B6B;
   font-size: 18px;
-  line-height: 3;
+  line-height: 2.5;
 
   .head-id,
   .head-image,
@@ -82,5 +84,8 @@ const HeadDiv = styled.div`
   .head-job {
     width: 200px;
   }
-`;
+`
+const CustomerAddDiv = styled.div`
+  margin-top: -1px;
+`
 export default App;
