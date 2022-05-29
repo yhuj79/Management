@@ -33,17 +33,19 @@ function App() {
 
   return (
     <div>
-      <Title />
       <HeadDiv>
-        <div className="head-id">고유ID</div>
-        <div className="head-image">프로필</div>
-        <div className="head-name">이름</div>
-        <div className="head-birthday">생년월일</div>
-        <div className="head-gender">성별</div>
-        <div className="head-job">직업</div>
-        <CustomerAddDiv>
-          <CustomerAdd />
-        </CustomerAddDiv>
+        <Title />
+        <HeadFormLine>
+          <div className="head-id">고유ID</div>
+          <div className="head-image">프로필</div>
+          <div className="head-name">이름</div>
+          <div className="head-birthday">생년월일</div>
+          <div className="head-gender">성별</div>
+          <div className="head-job">직업</div>
+          <CustomerAddDiv>
+            <CustomerAdd />
+          </CustomerAddDiv>
+        </HeadFormLine>
       </HeadDiv>
       <div>
         {customers !== 0
@@ -66,18 +68,20 @@ function App() {
   );
 }
 const HeadDiv = styled.div`
+  position: sticky;
+  top: 0;
+  margin-bottom: 20px;
+`;
+const HeadFormLine = styled.div`
   display: flex;
   justify-content: center;
   padding: 10px;
   margin-right: -20px;
   background-color: #353535;
-  border-top: 1px solid #6B6B6B;
-  border-bottom: 1px solid #6B6B6B;
+  border-top: 1px solid #6b6b6b;
+  border-bottom: 1px solid #6b6b6b;
   font-size: 18px;
   line-height: 2.5;
-
-  position: sticky;
-  top: 0;
 
   .head-id,
   .head-image,
@@ -87,8 +91,8 @@ const HeadDiv = styled.div`
   .head-job {
     width: 200px;
   }
-`
+`;
 const CustomerAddDiv = styled.div`
   margin-top: -1px;
-`
+`;
 export default App;
