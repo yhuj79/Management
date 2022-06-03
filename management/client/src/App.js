@@ -22,14 +22,14 @@ function App() {
       });
   }, []);
 
-  if (loading) {
-    return (
-      <div className="loader">
-        <ClipLoader size={100} color="white" />
-        <p>잠시만 기다려 주세요!</p>
-      </div>
-    );
-  }
+  // if (loading) { 2022.06.02. 인스턴스 중지.
+  //   return (
+  //     <div className="loader">
+  //       <ClipLoader size={100} color="white" />
+  //       <p>잠시만 기다려 주세요!</p>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>
